@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco dell'uovo e del macchinista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gioco dell'uovo e del macchinista</h1>
+    <div>
+        <p>L'uovo è al <span id="sazieta">0</span>% di sazietà.</p>
+        <button onclick="mangiaMacchinista()">Mangia il macchinista</button>
+    </div>
+
+    <script>
+        var sazieta = 0;
+
+        function mangiaMacchinista() {
+            var incremento = Math.floor(Math.random() * 10) + 1;
+            sazieta += incremento;
+            document.getElementById("sazieta").textContent = sazieta;
+            if (sazieta >= 100) {
+                document.getElementById("sazieta").textContent = "Sazio!";
+                document.querySelector("button").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
